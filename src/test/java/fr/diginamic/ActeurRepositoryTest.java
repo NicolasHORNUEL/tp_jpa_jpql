@@ -22,9 +22,9 @@ public class ActeurRepositoryTest {
 	@Test
 	public void testExtraireActeursTriesParIdentite() {
 		
-		TypedQuery<Acteur> query = em.createQuery("SELECT a FROM Acteur a ORDER BY a.identite DESC", Acteur.class);
+		TypedQuery<Acteur> query = em.createQuery("SELECT a FROM Acteur a ORDER BY a.identite ASC", Acteur.class);
 		List<Acteur> acteurs = query.getResultList(); 
-		
+
 		assertEquals(1137, acteurs.size());
 		assertEquals("A.J. Danna", acteurs.get(0).getIdentite());
 	}
